@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>South Sumatera History</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@300;400;600&display=swap');
+        
+        body {
+            font-family: 'Raleway', sans-serif;
+            background-color: #f5f5f5;
+        }
+        
+        .heading-font {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: #8b5a2b;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+        }
+        
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            right: -10px;
+            background-color: #8b5a2b;
+            border: 4px solid #e5b687;
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        
+        .left {
+            left: 0;
+        }
+        
+        .right {
+            left: 50%;
+        }
+        
+        .left::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            right: 30px;
+            border: medium solid #e5b687;
+            border-width: 10px 0 10px 10px;
+            border-color: transparent transparent transparent #e5b687;
+        }
+        
+        .right::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            left: 30px;
+            border: medium solid #e5b687;
+            border-width: 10px 10px 10px 0;
+            border-color: transparent #e5b687 transparent transparent;
+        }
+        
+        .right::after {
+            left: -10px;
+        }
+        
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            min-height: 500px;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        
+        @media screen and (max-width: 768px) {
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-item::before {
+                left: 60px;
+                border: medium solid #e5b687;
+                border-width: 10px 10px 10px 0;
+                border-color: transparent #e5b687 transparent transparent;
+            }
+            
+            .left::after, .right::after {
+                left: 21px;
+            }
+            
+            .right {
+                left: 0%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="bg-amber-900 text-white">
+        <div class="container mx-auto px-6 py-12 md:py-20 text-center">
+            <h1 class="heading-font text-4xl md:text-6xl mb-4">SOUTH SUMATERA HISTORY</h1>
+            <p class="text-xl md:text-2xl opacity-90">Menelusuri Jejak Peradaban dan Kebudayaan</p>
+        </div>
+    </header>
+    
+    <nav class="sticky top-0 z-50 bg-amber-800 shadow-md">
+        <div class="container mx-auto px-6 py-3">
+            <div class="flex flex-col md:flex-row md:justify-between md:items-center">
+                <div class="flex justify-between items-center">
+                    <span class="text-xl font-semibold text-white heading-font">Sejarah Ku</span>
+                    <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div id="mobile-menu" class="hidden md:flex flex-col md:flex-row md:items-center mt-4 md:mt-0">
+                    <a href="#" class="px-2 py-1 text-white hover:bg-amber-700 rounded md:mx-2">Beranda</a>
+                    <a href="#timeline" class="px-2 py-1 text-white hover:bg-amber-700 rounded md:mx-2">Timeline</a>
+                    <a href="#tokoh" class="px-2 py-1 text-white hover:bg-amber-700 rounded md:mx-2">Tokoh</a>
+                    <a href="#artifak" class="px-2 py-1 text-white hover:bg-amber-700 rounded md:mx-2">Senjata</a>
+                    <a href="#tentang" class="px-2 py-1 text-white hover:bg-amber-700 rounded md:mx-2">Tentang</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <section class="parallax bg-amber-50 relative" style="background-image: url('img/background1.png');">
+        <div class="absolute inset-0 bg-black opacity-50"></div>
+        <div class="container mx-auto px-6 py-32 relative z-10 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold text-white mb-6 heading-font">Mengungkap Masa Lalu Untuk Masa Depan</h1>
+            <p class="text-xl text-amber-100 mb-8">Telusuri perjalanan panjang peradaban manusia melalui berbagai era dan kejadian penting yang membentuk dunia kita hari ini.</p>
+            <a href="#timeline" class="bg-amber-700 hover:bg-amber-600 text-white font-bold py-3 px-6 rounded transition duration-300 inline-block">Mulai Eksplorasi</a>
+        </div>
+    </section>
+    
+    <section id="timeline" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12 text-amber-900 heading-font">Timeline Sejarah</h2>
+            <div class="timeline">
+                <div class="timeline-item left">
+                    <div class="bg-amber-50 p-6 rounded shadow-md border border-amber-200">
+                        <h3 class="text-xl font-bold mb-2 text-amber-800">Kerajaan Sriwijaya</h3>
+                        <h4 class="text-amber-600 mb-4">abad ke-7 hingga ke-13</h4>
+                        <div class="mb-4">
+                            <img src="img/timelinesatu.png" alt="Gua prasejarah dengan lukisan dinding manusia purba berburu di Indonesia" class="w-full rounded shadow" />
+                        </div>
+                        <p class="text-gray-700">Kerajaan Sriwijaya pada abad ke-7 hingga ke-13 dikenal sebagai pusat maritim yang menguasai jalur perdagangan strategis di Selat Malaka yang menjadi pusat ekonomi berbasis perdagangan rempah, emas, dan pajak kapal asing serta terkenal sebagai pusat pendidikan Buddha.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item right">
+                    <div class="bg-amber-50 p-6 rounded shadow-md border border-amber-200">
+                        <h3 class="text-xl font-bold mb-2 text-amber-800">Kesultanan Palembang Darussalam</h3>
+                        <h4 class="text-amber-600 mb-4">Tahun 1659–1823</h4>
+                        <div class="mb-4">
+                            <img src="img/timelinedua.png" alt="Candi Borobudur megah dilihat dari udara dengan latar belakang pegunungan" class="w-full rounded shadow" />
+                        </div>
+                        <p class="text-gray-700">Kesultanan Palembang Darussalam adalah sebuah kerajaan Islam yang pernah berdiri di Palembang, Sumatera Selatan. Kerajaan ini didirikan oleh Pangeran Ario Kesumo dengan gelar Sultan Abdurrahman Kholifatul Mukminin Sayyidul Imam pada tahun 1659.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item left">
+                    <div class="bg-amber-50 p-6 rounded shadow-md border border-amber-200">
+                        <h3 class="text-xl font-bold mb-2 text-amber-800">Pendudukan Jepang</h3>
+                        <h4 class="text-amber-600 mb-4">Maret 1942 - 1945</h4>
+                        <div class="mb-4">
+                            <img src="img/timelinetiga.png" alt="Masjid tua dengan arsitektur khas Indonesia bergaya beratap tumpang berwarna coklat" class="w-full rounded shadow" />
+                        </div>
+                        <p class="text-gray-700">pada Maret 1942, Jepang menguasai Palembang dan wilayah Sumatera Selatan, mengambil alih kilang minyak Plaju dan Sungai Gerong. Masyarakat mengalami kerja paksa (romusha) dan penindasan</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item right">
+                    <div class="bg-amber-50 p-6 rounded shadow-md border border-amber-200">
+                        <h3 class="text-xl font-bold mb-2 text-amber-800">proklamasi kemerdekaan Indonesia</h3>
+                        <h4 class="text-amber-600 mb-4">17 Agustus 1945</h4>
+                        <div class="mb-4">
+                            <img src="img/timelineempat.png" alt="Pelabuhan tua dengan kapal-kapal kayu Belanda bersandar di Batavia abad ke-17" class="w-full rounded shadow" />
+                        </div>
+                        <p class="text-gray-700"></p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item left">
+                    <div class="bg-amber-50 p-6 rounded shadow-md border border-amber-200">
+                        <h3 class="text-xl font-bold mb-2 text-amber-800">Pengambilalihan kekuasaan dari jepang</h3>
+                        <h4 class="text-amber-600 mb-4">Agustus - September 1945</h4>
+                        <div class="mb-4">
+                            <img src="img/timelinelima.png" alt="Proklamasi Kemerdekaan Indonesia dengan Soekarno dan Hatta berdiri di depan mikrofon dengan kerumunan rakyat" class="w-full rounded shadow" />
+                        </div>
+                        <p class="text-gray-700">pada 23 Agustus 1945 Pembentukan Komite Nasional Indonesia (KNI) Sumatera Selatan di Palembang sebagai wadah politik rakyat. selanjutnya 26 Agustus 1945, Rakyat dan pemuda berhasil merebut gedung-gedung pemerintahan, kantor pos, dan fasilitas penting dari tangan Jepang.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item right">
+                    <div class="bg-amber-50 p-6 rounded shadow-md border border-amber-200">
+                        <h3 class="text-xl font-bold mb-2 text-amber-800">pembentukan pemerintahan sumatera selatan</h3>
+                        <h4 class="text-amber-600 mb-4"> September 1945</h4>
+                        <div class="mb-4">
+                            <img src="img/timelineenam.png" alt="Pejuang Indonesia dengan bambu runcing melawan tentara sekutu di Surabaya" class="w-full rounded shadow" />
+                        </div>
+                        <p class="text-gray-700">pada  September 1945 – Dr. A.K. Gani diangkat sebagai Residen Sumatera Selatan serta dibentuknya Badan Keamanan Rakyat (BKR) yang kelak menjadi TKR (Tentara Keamanan Rakyat) untuk menjaga keamanan dan mempertahankan kemerdekaan.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item left">
+                    <div class="bg-amber-50 p-6 rounded shadow-md border border-amber-200">
+                        <h3 class="text-xl font-bold mb-2 text-amber-800">kedatangan sekutu & NICA</h3>
+                        <h4 class="text-amber-600 mb-4">Oktober 1945</h4>
+                        <div class="mb-4">
+                            <img src="img/timelinetujuh.png" alt="Presiden Soekarno berpidato dengan penuh semangat di depan lautan massa" class="w-full rounded shadow" />
+                        </div>
+                        <p class="text-gray-700">terjadi setelah Jepang menyerah kepada Sekutu pada akhir Perang Dunia II. Pasukan Sekutu yang diboncengi NICA mendarat di Palembang pada tanggal 12 Oktober 1945.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item right">
+                    <div class="bg-amber-50 p-6 rounded shadow-md border border-amber-200">
+                        <h3 class="text-xl font-bold mb-2 text-amber-800">Pertempuran lima hari lima malam di Palembang</h3>
+                        <h4 class="text-amber-600 mb-4">1 - 5 Januari 1947.</h4>
+                        <div class="mb-4">
+                            <img src="img/timelinedelapan.png" alt="Pembangunan infrastruktur masif seperti jalan tol dan pabrik di masa Orde Baru" class="w-full rounded shadow" />
+                        </div>
+                        <p class="text-gray-700">Pertempuran Palembang atau Pertempuran Lima Hari Lima Malam merupakan peristiwa perlawanan tentara Indonesia (TRI) terhadap serangan pasukan tentara Belanda (NICA) yang terjadi di Palembang selama lima hari berturut-turut sejak tanggal 1 hingga 5 Januari 1947. Konflik awal terjadi ketika Belanda menginginkan agar Kota Palembang dapat dikosongkan segera, namun permintaan tersebut ditolak oleh seluruh rakyat Palembang sehingga berakhir dengan baku tembak pada 1 Januari 1947 di Palembang Ilir dan menyerang markas Barisan Pemberontak Republik Indonesia (BPRI) di Jalan Tengkuruk, tokoh penting yang memimpin jalannya pertempuran dari pihak tentara dan pejuang Indonesia diantaranya adalah Kolonel Maludin Simbolon, Letnan Kolonel Bambang Utoyo, Mayor Rasyad Nawawi, Kapten Alamsyah.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item left">
+                    <div class="bg-amber-50 p-6 rounded shadow-md border border-amber-200">
+                        <h3 class="text-xl font-bold mb-2 text-amber-800">Agresi militer Belanda dan perjuangan gerilya</h3>
+                        <h4 class="text-amber-600 mb-4">Agresi Militer I (1947) dan Agresi Militer II (1948–1949)</h4>
+                        <div class="mb-4">
+                            <img src="img/timelinesembilan.png" alt="Mahasiswa menduduki gedung DPR/MPR menuntut reformasi pada tahun 1998" class="w-full rounded shadow" />
+                        </div>
+                        <p class="text-gray-700">Sumatera Selatan mengalami serangan dalam Agresi Militer I (1947) dan Agresi Militer II (1948–1949) Pejuang seperti Letkol Burlian dan Mayor Harun Kamil memimpin perang gerilya dari pedalaman dan daerah Sungai Musi.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item right">
+                    <div class="bg-amber-50 p-6 rounded shadow-md border border-amber-200">
+                        <h3 class="text-xl font-bold mb-2 text-amber-800">Penyerahan kedaulatan</h3>
+                        <h4 class="text-amber-600 mb-4">26 Desember 1949</h4>
+                        <div class="mb-4">
+                            <img src="img/timelinesepuluh.png" alt="Pemandangan malam Jembatan Ampera di Palembang yang megah dengan lampu warna-warni" class="w-full rounded shadow" />
+                        </div>
+                        <p class="text-gray-700">Berdasarkan hasil Konferensi Meja Bundar (KMB), Belanda mengakui kedaulatan Indonesia. Sumatera Selatan menjadi bagian dari Republik Indonesia Serikat (RIS), lalu kembali ke bentuk NKRI pada 17 Agustus 1950.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    
+    <section id="tokoh" class="py-16 bg-amber-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12 text-amber-900 heading-font">Tokoh Bersejarah</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white rounded-lg shadow-md overflow-hidden card transition duration-300 hover:shadow-xl">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="pahlawan/pahlawan1.png" alt="Patung Gajah Mada dengan ekspresi tegas memegang keris, mengenakan pakaian kebesaran Majapahit" class="w-full h-full object-cover" />
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-amber-800">Sultan Mahmud Badaruddin II</h3>
+                        <p class="text-amber-600 mb-4">Memimpin Kesultanan Palembang Darussalam</p>
+                        <p class="text-gray-700">Sultan Mahmud Baruddin II atau dapat dipanggil Raden Hasan Putera Ratu, lahir di Palembang tahun 1767, Sultan Mahmud Badaruddin II memimpin Kesultanan Palembang Darussalam pada dua periode (1803–1813 dan 1818–1821)
+                            .</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-md overflow-hidden card transition duration-300 hover:shadow-xl">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="img/timelineenam.png" alt="Potret Raden Ajeng Kartini dengan kebaya dan rambut disanggul, latar belakang buku dan pena" class="w-full h-full object-cover" />
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-amber-800">Adnan Kapau Gani</h3>
+                        <p class="text-amber-600 mb-4">Mengorganisir bantuan sosial bagi korban perang, membentuk kelompok PKO (Penolong Keamanan Umum)</p>
+                        <p class="text-gray-700">Ketika krisis pasca-kemerdekaan, ia dikenal sebagai “raja penyelundup”—melakukan barter komoditas (karet, kopi) dengan Singapura untuk mendapatkan senjata, amunisi, dan perlengkapan perjuangan</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-md overflow-hidden card transition duration-300 hover:shadow-xl">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="pahlawan/pahlawan 3.png" alt="Patung Diponegoro dengan sorban dan janggut tebal, memegang pedang sambil berkuda" class="w-full h-full object-cover" />
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-amber-800">A.M Thalib</h3>
+                        <p class="text-amber-600 mb-4">Jurnalis</p>
+                        <p class="text-gray-700">salah satu pejuang yang semasa hidupnya pernah menjadi seorang jurnalis atau wartawan dan seorang wirausaha. Ia bersama-sama rakyat dan pejuang di Sumatera Selatan pernah mengangkat senjata melawan pasukan Belanda yang melakukan agresi militer pada tahun 1948.</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-md overflow-hidden card transition duration-300 hover:shadow-xl">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="pahlawan/pahlawan 4.png" alt="Potret Bung Hatta dengan kacamata bundar, mengenakan jas lengkap dengan dasi, ekspresi serius" class="w-full h-full object-cover" />
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-amber-800">Harun Sohar</h3>
+                        <p class="text-amber-600 mb-4">Panglima Kodam IV/Sriwijaya</p>
+                        <p class="text-gray-700">berperan penting dalam pembentukan Badan Keamanan Rakyat (BKR) yang kini telah berubah nama menjadi Tentara Nasional Indonesia (TNI).</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="artifak" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12 text-amber-900 heading-font">Artifak Bersejarah</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-amber-50 rounded-lg overflow-hidden shadow-md card transition duration-300 hover:shadow-lg">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="artefak/klewang.png" alt="Prasasti Yupa dengan tulisan Pallawa kuno dipahat pada batu andesit di Museum Nasional" class="w-full h-full object-cover" />
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-amber-800">Klewang</h3>
+                        <p class="text-amber-600 mb-4">Senjata Khas Sumatera selatan</p>
+                        <p class="text-gray-700">senjata tradisional khas Sumatra Selatan, khususnya Palembang, yang berbentuk mirip pedang dengan satu sisi tajam dan sedikit melengkung. Panjangnya berkisar antara 38 hingga 76 cm, membuatnya ideal untuk pertarungan jarak dekat. Berbeda dengan golok, klewang memiliki gagang yang khas, bahkan di Palembang ada yang dikenal sebagai Pedang Makara karena hulu berbentuk makara, serta ada versi regalia Kesultanan Palembang yang bertatahkan emas dan permata.</p>
+                    </div>
+                </div>
+                
+                <div class="bg-amber-50 rounded-lg overflow-hidden shadow-md card transition duration-300 hover:shadow-lg">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="artefak/alat musik.png" alt="Keris pusaka dengan lekukan indah dan pamor yang khas tergeletak di atas kain sutra" class="w-full h-full object-cover" />
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-amber-800">Burdah (Gendang Oku)</h3>
+                        <p class="text-amber-600 mb-4">Alat Musik Khas Sumatera Selatan</p>
+                        <p class="text-gray-700">alat musik pukul sejenis rebana, terbuat dari kayu nangka dan kulit kambing atau sapi. Dimainkan dengan telapak tangan, burdah sering digunakan dalam acara adat, pertunjukan pencak silat, dan mengiringi lagu Islami seperti barzanji.</p>
+                    </div>
+                </div>
+                                
+                <div class="bg-amber-50 rounded-lg overflow-hidden shadow-md card transition duration-300 hover:shadow-lg">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="artefak/genggong.png" alt="Naskah teks Proklamasi tulisan tangan dengan tinta hitam pada kertas kuning kecoklatan" class="w-full h-full object-cover" />
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-amber-800">Genggong</h3>
+                        <p class="text-amber-600 mb-4">Alat Musik Khas Sumatera Selatan</p>
+                        <p class="text-gray-700">alat musik tiup khas Suku Pasemah di Pagaralam, dibuat dari bambu, kayu, pelepah enau, atau logam. Suaranya dihasilkan dari tiupan disertai dengan lidah yang digetarkan yang diatur melalui rongga mulut. Dahulu, alat ini biasa dimainkan petani sebagai hiburan saat beristirahat di sawah atau ladang.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="tentang" class="py-16 bg-amber-50">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row items-center">
+                <div class="lg:w-1/2 mb-8 lg:mb-0 lg:pr-12">
+                    <h2 class="text-3xl font-bold mb-6 text-amber-900 heading-font">Tentang Sumatera Selatan</h2>
+                    <p class="text-amber-600 mb-4">Tradisi Ngobeng</p>
+                    <p class="text-gray-700 mb-4">Ngobeng berasal dari kata beng yang berarti makan bersama, di mana warga atau kerabat membantu tuan rumah dalam menyiapkan makanan untuk tamu pada acara besar seperti pernikahan, khitanan, atau syukuran. Tradisi ini menjadi lambang akan kebersamaan, kesetaraan, dan rasa syukur masyarakat sumatera selatan</p>
+                    <p class="text-gray-700 mb-6">Tradisi ini merupakan hasil akulturasi antara ajaran Islam dengan budaya lokal, di mana makan bersama dengan tangan dan duduk bersila merupakan cara makan yang dianjurkan dalam Islam, sesuai dengan sunnah Nabi Muhammad SAW.</p>
+                </div>
+                <div class="lg:w-1/2">
+                    <img src="artefak/tradisi.png" alt="Perpustakaan tua dengan rak buku kayu penuh buku-buku sejarah dan dokumen kuno yang terawat baik" class="w-full rounded-lg shadow-xl" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+        </div>
+    </section>
+    
+    <footer class="bg-amber-900 text-white py-8">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <h2 class="text-2xl font-bold heading-font">SejarahKu</h2>
+                    <p class="mt-2 opacity-80">Menelusuri Masa Lalu, Memahami Masa Kini</p>
+                </div>
+                <div class="flex flex-col items-center md:items-end">
+                    <div class="flex space-x-4 mb-4">
+                        <a href="https://www.instagram.com/xii.betech/" target="_blank" rel="noopener noreferrer" aria-label="Kunjungi profil Instagram kami" class="hover:text-amber-300">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                    </div>
+                    <p class="text-sm opacity-80">© 2025 Portal Sejarah Nusantara. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Timeline animation
+        document.addEventListener('DOMContentLoaded', function() {
+            const timelineItems = document.querySelectorAll('.timeline-item');
+            
+            function checkTimelineItems() {
+                timelineItems.forEach(item => {
+                    const itemTop = item.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+                    
+                    if (itemTop < windowHeight * 0.8) {
+                        item.style.opacity = '1';
+                        item.style.transform = 'translateX(0)';
+                    }
+                });
+            }
+            
+            // Set initial state
+            timelineItems.forEach((item, index) => {
+                item.style.opacity = '0';
+                item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                
+                if (index % 2 === 0) {
+                    item.style.transform = 'translateX(-30px)';
+                } else {
+                    item.style.transform = 'translateX(30px)';
+                }
+            });
+            
+            // Check on load and scroll
+            checkTimelineItems();
+            window.addEventListener('scroll', checkTimelineItems);
+            
+            // Card hover effects
+            const cards = document.querySelectorAll('.card');
+            cards.forEach(card => {
+                card.style.transition = 'transform 0.3s ease, box-shadow 0.3s ease';
+            });
+            
+            // Newsletter form submission
+            const newsletterForm = document.querySelector('form');
+            if (newsletterForm) {
+                newsletterForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const email = this.querySelector('input').value;
+                    alert('Terima kasih! Anda telah berlangganan newsletter kami dengan alamat ' + email);
+                    this.reset();
+                });
+            }
+        });
+    </script>
+</body>
+</html>
